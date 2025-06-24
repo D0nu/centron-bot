@@ -1,103 +1,251 @@
 import Image from "next/image";
+import { Send, BarChart3, FileText } from 'lucide-react';
+
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="relative overflow-x-hidden">
+      <div className="flex justify-between items-center w-full max-w-6xl mx-auto px-4
+                r1024x600:px-[230px] 
+                r1280x800:px-[250px] 
+                r1024x1366:px-[300px]"
+       >
+        <div className="flex-shrink-0 sm:-ml-32; lg:-ml-56">
+            <svg className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px]" viewBox="-2000 1000 28000 21000" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="2090.68" cy="2090.68" r="2090.68" fill="#3FFF90"/>
+                <path d="M2921.93 3150.11C3050.22 3150.11 3154.23 3046.1 3154.23 2917.81L3154.23 2892C3154.23 2806.47 3223.56 2737.13 3309.09 2737.13L3541.39 2737.13C3669.68 2737.13 3773.69 2633.13 3773.69 2504.83L3773.69 1885.37C3773.69 1757.08 3669.68 1653.08 3541.39 1653.08L3309.09 1653.08C3223.56 1653.08 3154.23 1583.74 3154.23 1498.21L3154.23 1420.78C3154.23 1292.48 3050.22 1188.48 2921.93 1188.48L1779.8 1188.48C1676.45 1188.48 1592.67 1104.7 1592.67 1001.35C1592.67 898.004 1508.89 814.224 1405.54 814.224L1295.85 814.224C1167.55 814.224 1063.55 918.227 1063.55 1046.52L1063.55 1498.21C1063.55 1583.74 994.213 1653.08 908.683 1653.08L676.386 1653.08C548.091 1653.08 444.088 1757.08 444.088 1885.37L444.088 2504.83C444.088 2633.13 548.091 2737.13 676.386 2737.13L908.683 2737.13C994.213 2737.13 1063.55 2806.47 1063.55 2892L1063.55 2917.81C1063.55 3046.1 1167.55 3150.11 1295.85 3150.11L2921.93 3150.11Z" fill="black"/>
+                <rect x="3158.24" y="2685.52" width="2090.68" height="1032.43" rx="258.108" transform="rotate(-180 3158.24 2685.52)" fill="#3FFF90"/>
+                <circle cx="2580.93" cy="2169.31" r="232.298" transform="rotate(-180 2580.93 2169.31)" fill="black"/>
+                <circle cx="1614.05" cy="2169.31" r="232.298" transform="rotate(-180 1614.05 2169.31)" fill="black"/>
+                <path d="M4790.1 2142.8C4790.1 1585.04 5082.11 1279.71 5763.46 1279.71C6380.66 1279.71 6690.36 1441.91 6730.18 1927.55H6325.35C6287.75 1655.88 6095.29 1642.74 5763.46 1642.74C5358.63 1642.74 5188.29 1799.01 5188.29 2142.8C5188.29 2489 5360.84 2647.67 5763.46 2647.67C6093.07 2647.67 6287.75 2681.97 6325.35 2407.9H6730.18C6690.36 2895.94 6380.66 3010.7 5763.46 3010.7C5082.11 3010.7 4790.1 2702.96 4790.1 2142.8Z" fill="white"/>
+                <path d="M7744.47 2676.52C8005.51 2676.52 8164.78 2646.77 8259.91 2502.52H8635.98C8549.7 2863.14 8226.73 3010.7 7744.47 3010.7C7248.94 3010.7 6864.02 2799.13 6864.02 2279.84C6864.02 1758.14 7237.88 1546.57 7766.59 1546.57C8262.12 1546.57 8658.1 1731.69 8658.1 2376H7251.15C7293.18 2601.99 7492.28 2676.52 7744.47 2676.52ZM7764.38 1859.11C7505.55 1859.11 7324.15 1914.41 7264.43 2113.95H8253.27C8189.12 1914.41 8003.29 1859.11 7764.38 1859.11Z" fill="white"/>
+                <path d="M9939.42 1546.57C10286.7 1546.57 10611.9 1681.2 10616.3 2202.9L10611.9 2986.65H10231.4V2359.17C10231.4 2058.65 10138.5 1902.38 9826.6 1902.38C9572.2 1902.38 9297.89 2044.23 9180.64 2193.29V2986.65H8802.36V1570.61H9180.64V1818.24C9366.47 1659.57 9623.08 1546.57 9939.42 1546.57Z" fill="white"/>
+                <path d="M12026.2 1914.41H11409V2323.11C11409 2597.18 11457.7 2666.9 11687.8 2666.9C11807.2 2666.9 11873.6 2666.9 12026.2 2642.86V2974.63C11900.1 2998.67 11756.4 3010.7 11581.6 3010.7C11245.3 3010.7 11028.5 2873.66 11028.5 2561.12V1914.41H10685.7V1570.61H11028.5V1277.31L11409 1159.5V1570.61H12026.2V1914.41Z" fill="white"/>
+                <path d="M13227.5 1546.57C13382.3 1546.57 13490.7 1570.61 13579.2 1594.65V1938.45C13455.3 1904.79 13355.8 1890.36 13245.2 1890.36C13032.8 1890.36 12789.5 1943.26 12559.4 2137.99V2986.65H12181.1V1570.61H12559.4V1811.03C12754.1 1621.1 12984.1 1546.57 13227.5 1546.57Z" fill="white"/>
+                <path d="M14517.6 3010.7C13977.9 3010.7 13615.1 2799.13 13615.1 2279.84C13615.1 1758.14 13977.9 1546.57 14517.6 1546.57C15055.2 1546.57 15420.2 1758.14 15420.2 2279.84C15420.2 2799.13 15055.2 3010.7 14517.6 3010.7ZM14517.6 2666.9C14867.2 2666.9 15039.7 2573.14 15039.7 2279.84C15039.7 1984.13 14867.2 1890.36 14517.6 1890.36C14165.9 1890.36 13993.4 1984.13 13993.4 2279.84C13993.4 2573.14 14165.9 2666.9 14517.6 2666.9Z" fill="white"/>
+                <path d="M16701.3 1546.57C17048.6 1546.57 17373.8 1681.2 17378.2 2202.9L17373.8 2986.65H16993.3V2359.17C16993.3 2058.65 16900.4 1902.38 16588.4 1902.38C16334 1902.38 16059.7 2044.23 15942.5 2193.29V2986.65H15564.2V1570.61H15942.5V1818.24C16128.3 1659.57 16384.9 1546.57 16701.3 1546.57Z" fill="white"/>
+                <path d="M17771 2171.34V3051.47L18289.4 3045.67C18289.4 3045.67 18652.7 3049.63 18712.1 3045.67C18771.4 3041.71 18902.6 2981.84 18902.6 2981.84C19036 2898.66 19105.7 2763.26 19105.7 2585.3C19105.7 2511.79 19097.9 2430.55 19086.3 2403.47C19055.4 2322.22 18937.4 2206.16 18856.1 2179.08L18778.8 2153.94L18861.9 2070.76C18956.7 1977.91 18999.3 1859.91 18995.4 1703.23C18991.5 1579.43 18954.8 1490.45 18873.5 1411.14C18763.3 1302.82 18685.9 1289.28 18202.3 1289.28H17771V2171.34ZM18720.7 1447.9C18819.4 1503.99 18873.5 1612.32 18873.5 1761.26C18873.5 1912.14 18819.4 2008.86 18701.4 2066.89C18622.1 2105.58 18577.6 2111.38 18260.3 2117.18L17906.4 2124.92V1765.13V1405.34H18275.8C18620.1 1405.34 18651.1 1409.21 18720.7 1447.9ZM18838.7 2271.93C18943.2 2337.7 18995.4 2457.63 18985.7 2610.44C18976.1 2757.45 18923.8 2844.5 18807.8 2896.73C18738.1 2927.68 18676.2 2933.48 18318.4 2933.48H17906.4V2573.69V2215.83L18337.7 2221.64C18745.9 2227.44 18771 2229.37 18838.7 2271.93Z" fill="white"/>
+                <path d="M20865.9 1469.57V1651.4L20755.7 1657.2C20649.3 1663 20643.5 1664.94 20637.7 1715.23C20631.9 1769.39 20631.9 1769.39 20747.9 1769.39H20864L20869.8 2295.54C20877.5 3044.13 20869.8 3032.53 21384.3 3042.2L21697.7 3049.93V2989.97V2930H21417.2C21101.9 2930 21032.3 2910.66 21007.1 2817.81C20997.4 2788.8 20991.6 2543.13 20991.6 2272.33V1779.07L21345.6 1773.26L21697.7 1769.39V1711.36V1653.33H21339.8H20982V1469.57V1285.81H20923.9H20865.9V1469.57Z" fill="white"/>
+                <path d="M19728.5 1655.27C19372.6 1715.23 19161.8 2061.48 19223.7 2492.84C19246.9 2665 19295.2 2771.39 19393.9 2870.04C19525.4 3001.58 19701.4 3065.41 19933.6 3065.41C20312.7 3063.48 20568 2844.9 20610.6 2477.37C20664.7 2026.67 20461.6 1717.17 20070.9 1653.34C19929.7 1632.06 19871.7 1632.06 19728.5 1655.27ZM20179.2 1800.35C20382.3 1862.25 20477.1 2018.93 20494.5 2312.95C20506.1 2548.94 20469.4 2684.34 20363 2790.73C20237.3 2916.47 20005.1 2970.63 19767.2 2930.01C19475.1 2881.65 19355.2 2726.9 19341.6 2384.52C19328.1 2082.76 19401.6 1924.14 19595 1823.56C19732.4 1753.92 19989.7 1744.25 20179.2 1800.35Z" fill="white"/>
+            </svg>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        <div>
+          
+        </div>
+        <div className="flex-shrink-0 -mt-[118px] md:-mt-[155px] lg:-mt-52 lg:-mr-52">
+        <button className="bg-[#3FFF90] text-black py-2 px-4 rounded-xl text-base sm:text-lg hover:bg-green-400 transition-colors duration-200 font-medium w-full sm:w-auto">
+        Trade now
+         </button>
+         </div>
     </div>
-  );
-}
+    
+
+<div className="justify-center items-center">
+<div className="text-center mt-24 px-4 sm:px-6">
+<h1 className="text-[#3FFF90] text-[32px] sm:text-[44px] md:text-[54.8px] leading-tight font-medium">
+  Trade seamlessly
+  <br className="block lg:hidden" />
+  on Sui with
+</h1>
+
+<h2 className="text-white text-[32px] sm:text-[44px] md:text-[54.8px] leading-tight font-medium mt-1">
+  low fees + high
+  <br className="block lg:hidden" />
+  speeds.
+</h2>
+
+  <h3 className="hidden lg:block text-white text-[24.99px] leading-snug font-medium mt-4">
+  Unlock Features Like DCA, Multi-Wallet <br />
+  Support & Live Position Tracking
+</h3>
+
+</div>
+
+
+  <div className="flex flex-col lg:flex-row mt-14 gap-7 lg:gap-7 gap-y-6 justify-center items-center max-w-6xl mx-auto">
+  <button className="bg-[#3FFF90] text-black font-medium py-3 px-12 rounded-xl text-lg hover:bg-green-400 transition-colors duration-200 flex items-center gap-2">
+    <svg width="20" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M20.1908 0.660481C21.4064 0.148648 22.7096 1.17655 22.4949 2.47794L19.9597 17.8493C19.7153 19.3313 18.0875 20.1818 16.7278 19.4432C15.5899 18.8252 13.9018 17.8739 12.3804 16.8798C11.6207 16.3834 9.29446 14.7916 9.5804 13.6584C9.82488 12.6896 13.7356 9.0493 15.9703 6.8844C16.8481 6.03401 16.4483 5.54273 15.4116 6.32572C12.8399 8.26804 8.71099 11.2211 7.34561 12.0522C6.14094 12.7854 5.51196 12.9106 4.7617 12.7854C3.39166 12.5572 2.12147 12.2036 1.08446 11.7738C-0.317132 11.1928 -0.248861 9.26663 1.08351 8.70571L20.1908 0.660481Z" fill="black"/>
+    </svg>
+    Launch Bot
+  </button>
+
+  <button className="bg-[#3FFF90] text-black font-medium py-3 px-12 rounded-xl text-lg hover:bg-green-400 transition-colors duration-200 flex items-center gap-2">
+    <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_152_1017)">
+        <path d="M10.3952 0.11377H15.0775C15.5244 0.11377 15.8874 0.476684 15.8874 0.923618V20.1266H9.58594V0.923618C9.58594 0.476684 9.94885 0.11377 10.3958 0.11377H10.3952Z" fill="black"/>
+        <path d="M2.52079 10.1201H7.20309C7.65002 10.1201 8.01294 10.483 8.01294 10.93V20.1265H1.71094V10.93C1.71094 10.483 2.07385 10.1201 2.52079 10.1201Z" fill="black"/>
+        <path d="M18.2722 5.20459H22.9545C23.4014 5.20459 23.7643 5.5675 23.7643 6.01444V20.1267H17.4629V6.01444C17.4629 5.5675 17.8258 5.20459 18.2727 5.20459H18.2722Z" fill="black"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_152_1017">
+          <rect width="24.9139" height="20.0128" fill="white" transform="translate(0.28125 0.11377)"/>
+        </clipPath>
+      </defs>
+    </svg>
+    Leaderboard
+  </button>
+
+  <button className="bg-[#3FFF90] text-black font-medium py-3 px-12 rounded-xl text-lg hover:bg-green-400 transition-colors duration-200 flex items-center gap-2">
+    <svg width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_152_1023)">
+        <path d="M8.02925 6.23145C8.90512 6.943 9.23369 6.8887 10.8784 6.77898L26.3838 5.84796C26.7125 5.84796 26.4391 5.51989 26.3295 5.46536L23.7543 3.60377C23.261 3.22071 22.6035 2.782 21.3437 2.89174L6.32979 3.9868C5.78226 4.0411 5.67288 4.31485 5.89096 4.53431L8.02925 6.23145ZM8.96017 9.84494V26.1593C8.96017 27.036 9.39831 27.3642 10.3845 27.3099L27.4249 26.3239C28.4115 26.2697 28.5214 25.6664 28.5214 24.9543V8.74942C28.5214 8.03831 28.248 7.65482 27.6439 7.70955L9.8365 8.74942C9.17935 8.80463 8.96017 9.13335 8.96017 9.84494ZM25.7824 10.7201C25.8917 11.2133 25.7824 11.7061 25.2883 11.7615L24.4672 11.9251V23.9693C23.7543 24.3525 23.097 24.5715 22.5493 24.5715C21.6722 24.5715 21.4526 24.2977 20.7957 23.4768L15.4251 15.0458V23.2032L17.1245 23.5866C17.1245 23.5866 17.1245 24.5715 15.7535 24.5715L11.9737 24.7908C11.8639 24.5715 11.9737 24.0246 12.3571 23.9149L13.3434 23.6416V12.8561L11.9739 12.7464C11.8641 12.2532 12.1376 11.5421 12.9053 11.4868L16.9602 11.2135L22.5493 19.7543V12.1988L21.1242 12.0353C21.0149 11.4323 21.4526 10.9945 22.0006 10.9402L25.7824 10.7201ZM5.06919 2.50868L20.6861 1.35865C22.6039 1.19417 23.0972 1.30435 24.3027 2.17994L29.2876 5.68369C30.1103 6.28621 30.3844 6.45024 30.3844 7.10706V26.3239C30.3844 27.5281 29.9457 28.2404 28.4117 28.3493L10.276 29.4446C9.12456 29.4995 8.57655 29.3353 7.97355 28.5683L4.30245 23.8054C3.64464 22.9287 3.37109 22.2727 3.37109 21.5052V4.42416C3.37109 3.43927 3.80993 2.61776 5.06919 2.50868Z" fill="black"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_152_1023">
+          <rect width="32.1579" height="28.9421" fill="white" transform="translate(0.521484 0.649414)"/>
+        </clipPath>
+      </defs>
+    </svg>
+    Litepaper
+  </button>
+</div>
+
+
+<div>
+    <img src="/walrus.png" alt="" className="absolute h-[70px] w-[70px] md:w-28 md:h-28 lg:w-24 lg:h-24 -ml-7 -mt-4 md:-mt-32 r540x720:mt-2 r1024x600:-mt-14 md:-ml-10  r1024x600:-ml-10 r1280x800:ml-5 r1280x800:-mt-[230px] r1024x1366:-ml-7 r1024x1366:-mt-12 lg:-mt-[400px] lg:ml-[220px] animate-bounce"/>
+    <img src="/Group 110.png" alt="" className="absolute h-[70px] w-[70px] md:w-24 md:h-24 lg:w-24 lg:h-24 -mt-[460px] ml-[275px] md:-mt-[630px] r912x1368:ml-[600px] r540x720:ml-[388px] r1024x600:-mt-[480px]  r1280x800:-mt-[580px] md:ml-[530px] r1024x600:ml-[650px] r1280x800:ml-[765px] r1024x1366:ml-[630px] r1024x1366:-mt-[480px] lg:-mt-[400px] lg:ml-[1580px] animate-bounce"/>
+      <img src="/equal.png" alt="" className="absolute h-[70px] w-[70px] md:w-24 md:h-24 lg:w-24 lg:h-24 -mt-[380px] ml-2 md:-mt-[605px] r540x720:ml-[90px] r912x1368:ml-48 r1024x600:-mt-[480px] md:ml-[160px]  r1024x600:ml-[237px] r1280x800:ml-[420px] r1024x1366:ml-48 r1024x1366:-mt-[480px] lg:-mt-[550px] lg:ml-[690px] animate-bounce"/>
+</div>
+
+<div className="-z-20 relative animate-pulse">
+
+  {/* Right line */}
+  <div className="absolute right-[35%] md:right-[39%] r1024x1366:right-[43%] lg:right-[42%] 
+    -top-[300px] md:-top-[480px] r1024x1366:-top-[400px]  lg:-top-[620px] 
+    w-px 
+    h-[500px] md:h-[700px] lg:h-[790px] 
+    transform rotate-12">
+    
+    <div className="w-full h-full bg-gradient-to-b from-green-400/90 via-green-500/60 to-transparent"></div>
+
+    <div className="absolute -top-1 left-1/2 w-[2px] h-[260px] md:h-[320px] lg:h-[360px] -translate-x-1/2 rotate-0">
+      <div className="absolute inset-0 bg-green-400 opacity-80 blur-[10px]"></div>
+      <div className="absolute inset-0 bg-green-400 opacity-40 blur-[20px]"></div>
+    </div>
+  </div>
+
+  {/* Left line */}
+  <div className="absolute left-[37%] md:left-[39%] r1024x1366:left-[37%] lg:left-[42%] 
+    -top-[300px] md:-top-[500px] r1024x1366:-top-[400px] lg:-top-[620px] 
+    w-px 
+    h-[500px] md:h-[700px] lg:h-[790px] 
+    transform -rotate-12">
+    
+    <div className="w-full h-full bg-gradient-to-b from-green-400/90 via-green-500/60 to-transparent"></div>
+
+    <div className="absolute -top-1 left-1/2 w-[2px] h-[260px] md:h-[320px] lg:h-[360px] -translate-x-1/2 rotate-0">
+      <div className="absolute inset-0 bg-green-400 opacity-80 blur-[10px]"></div>
+      <div className="absolute inset-0 bg-green-400 opacity-40 blur-[20px]"></div>
+    </div>
+  </div>
+
+  {/* Diagonal Lines */}
+  <div className="absolute -left-[26%] md:-left-[8%] r1024x1366:-left-[5%] r1280x800:left-[6%] lg:left-[20.5%] 
+    -top-[450px] md:-top-[600px] r1024x1366:-top-[600px] r1280x800:-top-[700px] lg:-top-[730px] 
+    w-px 
+    h-[700px] md:h-[850px] lg:h-[1000px] 
+    bg-green-500/30 transform -rotate-45"></div>
+
+  <div className="absolute -right-[26%] md:-right-[8%] r1024x1366:-right-[2%] r1280x800:right-[6%] lg:right-[21%] 
+    -top-[450px] md:-top-[600px] r1024x1366:-top-[600px] lg:-top-[730px] 
+    w-px 
+    h-[700px] md:h-[850px] lg:h-[1000px] 
+    bg-green-500/40 transform rotate-45"></div>
+
+</div>
+
+
+
+
+<div className="bg-[#161616] mt-28 py-5 rounded-full flex flex-wrap md:flex-nowrap justify-center lg:justify-between items-center 
+  w-full max-w-[95%] gap-7 sm:max-w-[90%] md:max-w-[70%] r1024x1366:max-w-[80%] r1024x1366:mt-52 r1024x1366:-mb-24 lg:max-w-[70%] px-4 sm:px-6 md:px-12 md:gap-14 mx-auto">
+
+  {/* Bot */}
+  <div className="flex items-center text-white gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap ml-4">
+    <svg
+      className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6"
+      viewBox="0 0 38 33"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M33.5565 0.703276C35.5716 -0.145184 37.7319 1.55875 37.3761 3.71605L33.1735 29.1969C32.7682 31.6537 30.0699 33.0635 27.8159 31.8391C25.9297 30.8147 23.1313 29.2378 20.6093 27.5899C19.35 26.7669 15.4938 24.1282 15.9678 22.2499C16.373 20.6438 22.8557 14.6093 26.5602 11.0206C28.0154 9.61091 27.3526 8.79653 25.6341 10.0945C21.371 13.3142 14.5266 18.2095 12.2632 19.5873C10.2662 20.8027 9.22357 21.0102 7.97988 20.8027C5.70878 20.4243 3.6032 19.8382 1.88416 19.1257C-0.439243 18.1625 -0.32607 14.9696 1.88259 14.0398L33.5565 0.703276Z"
+        fill="white"
+      />
+    </svg>
+    <h1 className="hidden lg:block">Bot</h1>
+  </div>
+
+  {/* Notion */}
+  <div className="flex items-center text-white gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap ml-3">
+    <svg
+      className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <title>Notion</title>
+      <path
+        fill="#ffffff"
+        d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"
+      />
+    </svg>
+    <h1 className="hidden lg:block">Notion</h1>
+  </div>
+
+  {/* Twitter/X */}
+  <a
+    href="https://x.com/CentronBot?t=5vwTDdxWy6TtEQV6IP5o8Q&s=09"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-primary hover:underline font-medium"
+  >
+    <div className="flex items-center text-white gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap ml-2">
+      <svg
+        className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <title>X</title>
+        <path
+          fill="#ffffff"
+          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+        />
+      </svg>
+      <h1 className="hidden lg:block">Twitter(x)</h1>
+    </div>
+  </a>
+
+  {/* Discord */}
+  <div className="flex items-center text-white gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap ml-2 mr-4">
+    <svg
+      className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6"
+      viewBox="0 0 38 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M23.91 0.60791C23.4836 1.24743 23.2705 1.88696 23.0573 2.52648C20.286 2.10013 17.5147 2.10013 14.7435 2.52648C14.5303 1.88696 14.1039 1.24743 13.8908 0.60791C11.3327 1.03426 8.77459 1.88696 6.42967 2.95283C1.52665 9.77442 0.247603 16.596 0.887127 23.4176C3.6584 25.5493 6.64284 27.0416 10.0536 27.8943C10.6932 26.8284 11.5459 25.7625 11.9722 24.6966C10.9063 24.2703 9.84046 23.8439 8.98776 23.2044C9.20093 23.2044 9.41411 22.7781 9.84046 22.5649C15.5962 25.3362 22.2046 25.3362 28.1735 22.5649C28.3866 22.5649 28.5998 22.9912 29.0262 23.2044C27.9603 23.8439 27.1076 24.2703 26.0417 24.6966C26.6812 25.7625 27.3208 26.8284 27.9603 27.8943C31.1579 26.8284 34.3555 25.3362 37.1268 23.4176C37.9795 15.7433 35.8478 8.92172 31.7974 2.95283C29.4525 1.88696 26.8944 1.03426 24.3363 0.60791H23.91ZM12.8249 19.1541C11.1195 19.1541 9.62728 17.4487 9.62728 15.5301C9.62728 13.6116 11.1195 11.9062 12.8249 11.9062C14.5303 11.9062 16.0225 13.6116 16.0225 15.5301C16.0225 17.4487 14.5303 19.1541 12.8249 19.1541ZM24.7627 19.1541C23.0573 19.1541 21.5651 17.4487 21.5651 15.5301C21.5651 13.6116 23.0573 11.9062 24.7627 11.9062C26.4681 11.9062 27.9603 13.6116 27.9603 15.5301C27.9603 17.4487 26.4681 19.1541 24.7627 19.1541Z"
+        fill="white"
+      />
+    </svg>
+    <h1 className="hidden lg:block">Discord</h1>
+  </div>
+</div>
+
+
+  
+</div>
+
+   
+    <div className="bg-[#161616] mt-10 md:mt-14 r1024x1366:mt-[389px] r853x1280:mt-[157.5px] r912x1368:mt-[246px] py-5 flex justify-center items-center">
+    <h1 className="text-white text-center">Terms of service  &middot; Privacy Policy</h1>
+    </div> 
+
+    </div> 
+  ); 
+} 
