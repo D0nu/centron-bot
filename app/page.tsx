@@ -1,7 +1,3 @@
-import Image from "next/image";
-import { Send, BarChart3, FileText } from 'lucide-react';
-
-
 
 export default function Home() {
   return (
