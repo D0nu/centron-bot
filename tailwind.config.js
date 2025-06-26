@@ -13,6 +13,11 @@ module.exports = {
       },
       screens: {
         ...defaultTheme.screens,
+
+        'r412x915' : { raw: '(min-width:412px) and (max-width: 412px) and (max-height: 915px)'},
+
+        'r430x932' : { raw: '(min-width:430px) and (max-width: 430px) and (max-height: 932px)'},
+
         'r540x720' : { raw: '(min-width:540px) and (max-width: 540px) and (max-height: 720px)'},
 
         'r853x1280' : { raw: '(min-width:853px) and (max-width: 853px) and (max-height: 1280px)'},
