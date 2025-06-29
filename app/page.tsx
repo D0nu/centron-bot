@@ -1,29 +1,9 @@
-"use client";
 
-import { useEffect, useState } from "react";
 
 import Design from "@/components/background";
 import Social from "@/components/social";
 
 export default function Home() {
-    const [screenSize, setScreenSize] = useState("base");
-  
-    useEffect(() => {
-      const updateSize = () => {
-        if (window.innerWidth >= 1024) {
-  setScreenSize("lg");
-} else if (window.innerWidth >= 768) {
-  setScreenSize("md");
-} else if (window.innerWidth >= 640) {
-  setScreenSize("sm");
-} else {
-  setScreenSize("base");
-}
-      };
-      updateSize();
-      window.addEventListener("resize", updateSize);
-      return () => window.removeEventListener("resize", updateSize);
-    }, []);
 
 
   return (
