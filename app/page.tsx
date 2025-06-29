@@ -1,11 +1,34 @@
-import Header from "@/components/header";
+"use client";
+
+import { useEffect, useState } from "react";
+
+import Design from "@/components/background";
+import Social from "@/components/social";
 
 export default function Home() {
+    const [screenSize, setScreenSize] = useState("base");
+  
+    useEffect(() => {
+      const updateSize = () => {
+        if (window.innerWidth >= 1024) {
+  setScreenSize("lg");
+} else if (window.innerWidth >= 768) {
+  setScreenSize("md");
+} else if (window.innerWidth >= 640) {
+  setScreenSize("sm");
+} else {
+  setScreenSize("base");
+}
+      };
+      updateSize();
+      window.addEventListener("resize", updateSize);
+      return () => window.removeEventListener("resize", updateSize);
+    }, []);
+
+
   return (
-    <div className="relative overflow-x-hidden">
-      <div >
-        <Header />
-      </div>
+    <div className="relative overflow-hidden">
+     
     
 
 <div className="justify-center items-center mt-44 md:mt-60 r853x1280:mt-[323px] r912x1368:mt-96 r1280x800:mt-[480px] r1024x1366:mt-[423px] lg:mt-80">
@@ -30,7 +53,7 @@ export default function Home() {
 </div>
 
 
-<div className="flex flex-col lg:flex-row mt-14 gap-7 justify-center items-center max-w-6xl mx-auto">
+<div className="flex flex-col lg:flex-row mt-14 gap-7 justify-center items-center max-w-6xl mx-auto r1024x600:mb-[550px]">
 
       <button className="w-[210px] lg:w-[250px] bg-[#3FFF90] text-black font-medium py-3 px-6 rounded-xl text-lg hover:bg-green-400 transition-colors duration-200 flex items-center justify-center gap-2">
         <svg width="20" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,151 +96,30 @@ export default function Home() {
 
 
 
-<div className="z-10">
-    <img src="/walrus.png" alt="" className="absolute h-[70px] w-[70px] md:w-28 md:h-28 lg:w-24 lg:h-24 -ml-7 -mt-4 md:-mt-32 r540x720:mt-2 r1024x600:-mt-14   md:-ml-10   r1024x600:-ml-10 r1280x800:ml-5 r1280x800:-mt-[230px] r1024x1366:-ml-7 r1024x1366:-mt-12 lg:-mt-[400px] lg:ml-[220px] animate-bounce"/>
-    <img src="/Group 110.png" alt="" className="absolute h-[70px] w-[70px] md:w-24 md:h-24 lg:w-24 lg:h-24 -mt-[490px] ml-[295px] md:-mt-[660px] r412x915:ml-[325px] r430x932:ml-[350px] r540x720:-mt-[420px] r853x1280:ml-[565px] r912x1368:ml-[600px] r540x720:ml-[420px] r1024x600:-mt-[480px]  r1280x800:-mt-[580px] md:ml-[530px] r1024x600:ml-[650px] r1280x800:ml-[765px] r1024x1366:ml-[630px] r1024x1366:-mt-[480px] lg:-mt-[400px] lg:ml-[1580px] animate-bounce"/>
-      <img src="/equal.png" alt="" className="absolute h-[70px] w-[70px] md:w-24 md:h-24 lg:w-24 lg:h-24 -mt-[380px] ml-2 md:-mt-[630px] r412x915:ml-[26px] r430x932:ml-[26px] r912x1368:-mt-[640px] r540x720:ml-[60px] r853x1280:ml-[175px] r912x1368:ml-52 r1024x600:-mt-[480px] md:ml-[160px]  r1024x600:ml-[237px] r1280x800:ml-[420px] r1024x1366:ml-[230px] r1024x1366:-mt-[480px] lg:-mt-[550px] lg:ml-[690px] animate-bounce"/>
-</div>
 
-<div className="-z-20 relative animate-pulse">
 
-  {/* Right line */}
-  <div className="absolute right-[32%] md:right-[39%] r1024x1366:right-[43%] lg:right-[42%] 
-    -top-[300px] md:-top-[480px] r1024x1366:-top-[400px]  lg:-top-[620px] 
-    w-px 
-    h-[500px] md:h-[700px] lg:h-[790px] 
-    transform rotate-12">
-    
-    <div className="w-full h-full bg-gradient-to-b from-green-400/90 via-green-500/60 to-transparent"></div>
+<div className="-z-20 r1024x600:-z-50 -mt-[500px] sm:-mt-[550px] md:-mt-[600px] r1024x600:mt-96 r1280x800:-mt-96 r1024x1366:-mt-[900px] lg:-mt-[700px]">
 
-    <div className="absolute -top-1 left-1/2 w-[2px] h-[260px] md:h-[320px] lg:h-[360px] -translate-x-1/2 rotate-0">
-      <div className="absolute inset-0 bg-green-400 opacity-80 blur-[10px]"></div>
-      <div className="absolute inset-0 bg-green-400 opacity-40 blur-[20px]"></div>
-    </div>
-  </div>
+<Design />
 
-  {/* Left line */}
-  <div className="absolute left-[30%] md:left-[39%] r1024x1366:left-[37%] lg:left-[42%] 
-    -top-[300px] md:-top-[500px] r1024x1366:-top-[400px] lg:-top-[620px] 
-    w-px 
-    h-[500px] md:h-[700px] lg:h-[790px] 
-    transform -rotate-12">
-    
-    <div className="w-full h-full bg-gradient-to-b from-green-400/90 via-green-500/60 to-transparent"></div>
 
-    <div className="absolute -top-1 left-1/2 w-[2px] h-[260px] md:h-[320px] lg:h-[360px] -translate-x-1/2 rotate-0">
-      <div className="absolute inset-0 bg-green-400 opacity-80 blur-[10px]"></div>
-      <div className="absolute inset-0 bg-green-400 opacity-40 blur-[20px]"></div>
-    </div>
-  </div>
-
-  {/* Diagonal Lines */}
-  <div className="absolute -left-[26%] md:-left-[8%] r1024x1366:-left-[5%] r1280x800:left-[6%] lg:left-[20.5%] 
-    -top-[450px] md:-top-[600px] r1024x1366:-top-[600px] r1280x800:-top-[700px] lg:-top-[730px] 
-    w-px 
-    h-[700px] md:h-[850px] lg:h-[1000px] 
-    bg-green-500/30 transform -rotate-45"></div>
-
-  <div className="absolute -right-[26%] md:-right-[8%] r1024x1366:-right-[2%] r1280x800:right-[6%] lg:right-[21%] 
-    -top-[450px] md:-top-[600px] r1024x1366:-top-[600px] lg:-top-[730px] 
-    w-px 
-    h-[700px] md:h-[850px] lg:h-[1000px] 
-    bg-green-500/40 transform rotate-45"></div>
+<Social />
 
 </div>
 
 
 
 
-<div className="bg-[#161616] mt-28 py-5 rounded-full flex flex-wrap md:flex-nowrap justify-center lg:justify-between items-center 
-  w-full max-w-[95%] gap-7 sm:max-w-[90%] md:max-w-[70%] r1024x1366:max-w-[80%] r1024x1366:mt-52 r1024x1366:-mb-24 lg:max-w-[70%] px-4 sm:px-6 md:px-12 md:gap-14 mx-auto">
 
-  {/* Bot */}
-  <div className="flex items-center text-white gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap ml-4">
-    <svg
-      className="w-6 h-6 lg:w-6 lg:h-6"
-      viewBox="0 0 38 33"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M33.5565 0.703276C35.5716 -0.145184 37.7319 1.55875 37.3761 3.71605L33.1735 29.1969C32.7682 31.6537 30.0699 33.0635 27.8159 31.8391C25.9297 30.8147 23.1313 29.2378 20.6093 27.5899C19.35 26.7669 15.4938 24.1282 15.9678 22.2499C16.373 20.6438 22.8557 14.6093 26.5602 11.0206C28.0154 9.61091 27.3526 8.79653 25.6341 10.0945C21.371 13.3142 14.5266 18.2095 12.2632 19.5873C10.2662 20.8027 9.22357 21.0102 7.97988 20.8027C5.70878 20.4243 3.6032 19.8382 1.88416 19.1257C-0.439243 18.1625 -0.32607 14.9696 1.88259 14.0398L33.5565 0.703276Z"
-        fill="white"
-      />
-    </svg>
-    <h1 className="hidden lg:block">Bot</h1>
-  </div>
 
-  {/* Notion */}
-  <div className="flex items-center text-white gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap ml-3">
-    <svg
-      className="w-6 h-6 lg:w-6 lg:h-6"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      <title>Notion</title>
-      <path
-        fill="#ffffff"
-        d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"
-      />
-    </svg>
-    <h1 className="hidden lg:block">Notion</h1>
-  </div>
 
-  {/* Twitter/X */}
-  <a
-    href="https://x.com/CentronBot?t=5vwTDdxWy6TtEQV6IP5o8Q&s=09"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-primary hover:underline font-medium"
-  >
-    <div className="flex items-center text-white gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap ml-2">
-      <svg
-        className="w-6 h-6 lg:w-6 lg:h-6"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <title>X</title>
-        <path
-          fill="#ffffff"
-          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-        />
-      </svg>
-      <h1 className="hidden lg:block">Twitter(x)</h1>
-    </div>
-  </a>
-
-  {/* Discord */}
-  <div className="flex items-center text-white gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap ml-2 mr-4">
-    <svg
-      className="w-6 h-6 lg:w-6 lg:h-6"
-      viewBox="0 0 38 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M23.91 0.60791C23.4836 1.24743 23.2705 1.88696 23.0573 2.52648C20.286 2.10013 17.5147 2.10013 14.7435 2.52648C14.5303 1.88696 14.1039 1.24743 13.8908 0.60791C11.3327 1.03426 8.77459 1.88696 6.42967 2.95283C1.52665 9.77442 0.247603 16.596 0.887127 23.4176C3.6584 25.5493 6.64284 27.0416 10.0536 27.8943C10.6932 26.8284 11.5459 25.7625 11.9722 24.6966C10.9063 24.2703 9.84046 23.8439 8.98776 23.2044C9.20093 23.2044 9.41411 22.7781 9.84046 22.5649C15.5962 25.3362 22.2046 25.3362 28.1735 22.5649C28.3866 22.5649 28.5998 22.9912 29.0262 23.2044C27.9603 23.8439 27.1076 24.2703 26.0417 24.6966C26.6812 25.7625 27.3208 26.8284 27.9603 27.8943C31.1579 26.8284 34.3555 25.3362 37.1268 23.4176C37.9795 15.7433 35.8478 8.92172 31.7974 2.95283C29.4525 1.88696 26.8944 1.03426 24.3363 0.60791H23.91ZM12.8249 19.1541C11.1195 19.1541 9.62728 17.4487 9.62728 15.5301C9.62728 13.6116 11.1195 11.9062 12.8249 11.9062C14.5303 11.9062 16.0225 13.6116 16.0225 15.5301C16.0225 17.4487 14.5303 19.1541 12.8249 19.1541ZM24.7627 19.1541C23.0573 19.1541 21.5651 17.4487 21.5651 15.5301C21.5651 13.6116 23.0573 11.9062 24.7627 11.9062C26.4681 11.9062 27.9603 13.6116 27.9603 15.5301C27.9603 17.4487 26.4681 19.1541 24.7627 19.1541Z"
-        fill="white"
-      />
-    </svg>
-    <h1 className="hidden lg:block">Discord</h1>
-  </div>
-</div>
 
 
   
 </div>
 
    
-    <div className="bg-[#161616] mt-10 md:mt-[156px] r412x915:mt-[52px] r430x932:mt-[70px] r1024x1366:mt-[350px] r853x1280:mt-[157.5px] r912x1368:mt-[246px]  lg:mt-20 py-5 flex justify-center items-center">
-    <h1 className="text-white text-center flex items-center">
-        <span>Terms of service</span>
-        <span className="-mt-[4px]  mx-4 text-4xl">·</span>
-        <span>Privacy Policy</span>
-    </h1>
-</div>
+    
 
     </div> 
   ); 
