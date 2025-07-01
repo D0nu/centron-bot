@@ -1,4 +1,5 @@
 // Social.jsx
+"use client"
 
 export default function Social() {
   return (
@@ -44,27 +45,30 @@ export default function Social() {
         </div>
 
         {/* Twitter/X */}
-        <a
-          href="https://x.com/CentronBot?t=5vwTDdxWy6TtEQV6IP5o8Q&s=09"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline font-medium"
-        >
-          <div className="flex items-center gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap">
-            <svg
-              className="w-6 h-6 lg:w-6 lg:h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <title>X</title>
-              <path
-                fill="#ffffff"
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-              />
-            </svg>
-            <h1 className="hidden lg:block">Twitter(X)</h1>
-          </div>
-        </a>
+<div className="relative z-10"> {/* Add z-index container */}
+  <a
+    href="https://x.com/CentronBot"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-primary hover:underline font-medium"
+    onClick={(e) => {
+      e.preventDefault();
+      window.open('https://x.com/CentronBot', '_blank');
+    }}
+  >
+    <div className="flex items-center gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap">
+      {/* Updated SVG */}
+      <svg 
+        className="w-6 h-6 lg:w-6 lg:h-6 text-white"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+      <h1 className="hidden lg:block">Twitter(X)</h1>
+    </div>
+  </a>
+</div>
 
         {/* Discord */}
         <div className="flex items-center gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap">

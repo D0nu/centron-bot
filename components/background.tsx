@@ -151,7 +151,7 @@ export default function Design() {
   else if (screenSize === "lg") lineHeight = "100%";
 
   return (
-    <div className="-z-10 relative w-full h-screen overflow-hidden bg-black">
+    <div className="-z-20 r1024x600:-z-50 relative w-full h-screen overflow-hidden bg-black">
       {/* Images */}
       <div className="relative z-10">
         {getVisibleImages().map((id) => (
