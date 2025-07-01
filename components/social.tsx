@@ -6,11 +6,11 @@ export default function Social() {
       {/* Social Bar */}
       <div className="absolute top-[-100px] left-1/2 transform -translate-x-1/2 bg-[#161616] py-5 rounded-full 
       flex flex-wrap md:flex-nowrap justify-center lg:justify-between items-center 
-      w-full max-w-[95%] sm:max-w-[90%] md:max-w-[70%] lg:max-w-[70%] gap-7 md:gap-14 
+      w-full max-w-[95%] sm:max-w-[90%] md:max-w-[70%] lg:max-w-[70%] gap-10 sm:gap-12 md:gap-14 
       px-4 sm:px-6 md:px-12 text-white">
 
         {/* Bot */}
-        <div className="flex items-center gap-1 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap">
+        <div className="flex items-center gap-2 sm:gap-[2px] text-sm sm:text-base lg:gap-2 lg:text-lg whitespace-nowrap">
           <svg
             className="w-6 h-6 lg:w-6 lg:h-6"
             viewBox="0 0 38 33"

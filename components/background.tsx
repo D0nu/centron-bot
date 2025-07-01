@@ -70,13 +70,13 @@ export default function Design() {
       const verticalPositions: Record<ScreenSize, Record<ImageID, number>> = {
         base: {
           walrus: 0.68,
-          equal: 0.03,
+          equal: 0.13,
           sui: 0.25,
           globe: 0.03,
         },
         md: {
           walrus: 0.6,
-          equal: 0.02,
+          equal: 0.12,
           sui: 0.25,
           globe: 0.02,
         },
