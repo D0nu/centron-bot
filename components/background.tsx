@@ -2,25 +2,30 @@
 
 import { useEffect, useState, useCallback } from "react";
 
-type ScreenSize = "base" | "md" | "lg";
+type ScreenSize = "base" | "sm" | "md" | "lg";
 type ImageID = "walrus" | "equal" | "sui" | "globe";
 
 export default function Design() {
   const [screenSize, setScreenSize] = useState<ScreenSize>("base");
-  const [dimensions, setDimensions] = useState({
-    width: 0,
-    height: 0,
-  });
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [isMobileLandscape, setIsMobileLandscape] = useState(false);
 
   useEffect(() => {
     const updateSize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
+
       setDimensions({ width, height });
 
       if (width >= 1024) setScreenSize("lg");
       else if (width >= 768) setScreenSize("md");
+      else if (width >= 640) setScreenSize("sm");
       else setScreenSize("base");
+
+      // ✅ Fixed: More accurate mobile landscape detection
+      const isLandscape = width > height;
+      const isSmallDevice = width <= 1024 && height <= 600;
+      setIsMobileLandscape(isLandscape && isSmallDevice);
     };
 
     if (typeof window !== "undefined") {
@@ -36,8 +41,10 @@ export default function Design() {
   }, []);
 
   const lineAngles = [-37, -10, 10, 37];
+
   const lineOffsets = {
     base: [-70, -20, 20, 70],
+    sm: [-70, -20, 20, 70],
     md: [-140, -60, 60, 140],
     lg: [-280, -100, 100, 280],
   }[screenSize];
@@ -64,21 +71,26 @@ export default function Design() {
       const offset = lineOffsets[index];
       const angle = lineAngles[index];
       const angleRad = (angle * Math.PI) / 180;
-
       const bottomAnchor = dimensions.height - 80;
 
       const verticalPositions: Record<ScreenSize, Record<ImageID, number>> = {
         base: {
-          walrus: 0.68,
-          equal: 0.13,
-          sui: 0.25,
-          globe: 0.03,
+          walrus: isMobileLandscape ? 0.52 : 0.68,
+          equal: isMobileLandscape ? 0.1 : 0.13,
+          sui: isMobileLandscape ? 0.22 : 0.25,
+          globe: isMobileLandscape ? 0.01 : 0.03,
+        },
+        sm: {
+          walrus: isMobileLandscape ? 1.2 : 0.68,
+          equal: isMobileLandscape ? 0.1 : 0.13,
+          sui: isMobileLandscape ? 0.22 : 0.25,
+          globe: isMobileLandscape ? 0.01 : 0.03,
         },
         md: {
-          walrus: 0.6,
-          equal: 0.12,
-          sui: 0.25,
-          globe: 0.02,
+          walrus: isMobileLandscape ? 0.5 : 0.6,
+          equal: isMobileLandscape ? 0.2 : 0.12,
+          sui: isMobileLandscape ? 0.22 : 0.25,
+          globe: isMobileLandscape ? 0.01 : 0.02,
         },
         lg: {
           walrus: 0.69,
@@ -92,33 +104,30 @@ export default function Design() {
       const distanceFromBottom = bottomAnchor - topPx;
       const horizontalShift = distanceFromBottom * Math.tan(angleRad);
 
-      const screenAdjustment = {
-        base: {
-          walrus: -10,
-          equal: -35,
-          sui: -5,
-          globe: -38,
-        },
-        md: {
-          walrus: -30,
-          equal: -45,
-          sui: -8,
-          globe: -60,
-        },
-        lg: {
-          walrus: -40,
-          equal: -50,
-          sui: -80,
-          globe: 0,
-        },
-      }[screenSize][id];
+      const screenAdjustment = (() => {
+        if (isMobileLandscape) {
+          return {
+            base: { walrus: -20, equal: -50, sui: 0, globe: -30 },
+            sm: { walrus: -350, equal: -110, sui: 5, globe: 40 },
+            md: { walrus: -30, equal: -45, sui: -8, globe: -60 },
+            lg: { walrus: -40, equal: -50, sui: -80, globe: 0 },
+          }[screenSize][id];
+        } else {
+          return {
+            base: { walrus: -10, equal: -35, sui: -5, globe: -38 },
+            sm: { walrus: -10, equal: -35, sui: -5, globe: -38 },
+            md: { walrus: -30, equal: -45, sui: -8, globe: -60 },
+            lg: { walrus: -40, equal: -50, sui: -80, globe: 0 },
+          }[screenSize][id];
+        }
+      })();
 
       return {
         top: `${topPx}px`,
         left: `calc(50% + ${offset + horizontalShift + screenAdjustment}px)`,
       };
     },
-    [dimensions, lineOffsets, screenSize]
+    [dimensions, lineOffsets, screenSize, isMobileLandscape]
   );
 
   const getImageSrc = (id: ImageID) => {
@@ -128,7 +137,6 @@ export default function Design() {
       case "equal":
         return "/equal.png";
       case "sui":
-        return "/Group 110.png";
       case "globe":
         return "/Group 110.png";
       default:
@@ -136,40 +144,60 @@ export default function Design() {
     }
   };
 
-  const getVisibleImages = (): ImageID[] => {
-    if (screenSize === "lg") {
-      return ["walrus", "equal", "sui"];
-    } else {
-      return ["walrus", "equal", "globe"];
-    }
-  };
+  const getVisibleImages = useCallback((): ImageID[] => {
+    return screenSize === "lg"
+      ? ["walrus", "equal", "sui"]
+      : ["walrus", "equal", "globe"];
+  }, [screenSize]);
 
-  // ✅ Define line height per screen size
-  let lineHeight = "100%";
-  if (screenSize === "base") lineHeight = "70%";
-  else if (screenSize === "md") lineHeight = "80%";
-  else if (screenSize === "lg") lineHeight = "100%";
+  // ✅ Line height adjustment based on screen and orientation
+  let lineContainerHeight: string;
+
+  if (isMobileLandscape) {
+    if (screenSize === "base") lineContainerHeight = "120dvh";
+    else if (screenSize === "sm") lineContainerHeight = "180dvh";
+    else if (screenSize === "md") lineContainerHeight = "20dvh";
+    else lineContainerHeight = "220dvh";
+  } else {
+    if (screenSize === "base") lineContainerHeight = "76%";
+    else if (screenSize === "sm") lineContainerHeight = "76%";
+    else if (screenSize === "md") lineContainerHeight = "170%";
+    else lineContainerHeight = "100%";
+  }
 
   return (
-    <div className="-z-20 r1024x600:-z-50 relative w-full h-screen overflow-hidden bg-black">
+    <div
+      className="-z-20 r1024x600:-z-50 relative w-full overflow-hidden landscape-md:overflow-visible"
+      style={{
+        height: isMobileLandscape ? "220dvh" : "100dvh",
+      }}
+    >
       {/* Images */}
       <div className="relative z-10">
-        {getVisibleImages().map((id) => (
-          <img
-            key={id}
-            src={getImageSrc(id)}
-            alt={id}
-            className="absolute w-20 h-20 md:w-28 md:h-28 animate-bounce"
-            style={{
-              ...getImagePosition(id),
-              transform: "translate(-50%, -50%)",
-            }}
-          />
-        ))}
+        {(["walrus", "equal", "sui", "globe"] as ImageID[]).map((id) => {
+          const isVisible = getVisibleImages().includes(id);
+          return (
+            <img
+              key={id}
+              src={getImageSrc(id)}
+              alt={id}
+              className={`absolute w-20 h-20 md:w-28 md:h-28 animate-bounce transition-opacity duration-300 ${
+                isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
+              style={{
+                ...getImagePosition(id),
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Diagonal Lines */}
-      <div className="absolute bottom-[80px] left-1/2 transform -translate-x-1/2 w-full h-full pointer-events-none z-0 animate-pulse">
+      <div
+        className="absolute bottom-[80px] left-1/2 transform -translate-x-1/2 w-full pointer-events-none z-0 animate-pulse"
+        style={{ height: lineContainerHeight }}
+      >
         {lineAngles.map((angle, i) => {
           const offset = lineOffsets[i];
           const isMiddle = i === 1 || i === 2;
@@ -181,7 +209,7 @@ export default function Design() {
                 isMiddle ? "bg-green-400" : "bg-green-400/20"
               }`}
               style={{
-                height: lineHeight, // ✅ Dynamic height applied here
+                height: "100%",
                 transform: `translateX(${offset}px) rotate(${angle}deg)`,
                 transformOrigin: "bottom center",
                 backgroundImage: isMiddle

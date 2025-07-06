@@ -4,7 +4,7 @@ import Social from "@/components/social";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden ">
       {/* Wrap content sections in a landscape-responsive container */}
       <div className="flex flex-col landscape-md:flex-col-reverse">
         {/* Text & Buttons Section - Should appear SECOND in landscape */}
@@ -30,7 +30,7 @@ export default function Home() {
 </h3>
             </div>
 
-            <div className="flex flex-col lg:flex-row mt-14 gap-7 justify-center items-center max-w-6xl mx-auto r1024x600:mb-[280px] landscape-md:mb-0">
+            <div className="flex flex-col lg:flex-row mt-14 gap-7 justify-center items-center max-w-6xl mx-auto r1024x600:mb-[280px]">
               <button className="w-[210px] lg:w-[250px] bg-[#3FFF90] text-black font-medium py-3 px-6 rounded-xl text-lg hover:bg-green-400 transition-colors duration-200 flex items-center justify-center gap-2">
                 {/* Launch Bot Icon */}
                 <svg width="20" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,17 +75,25 @@ export default function Home() {
         </div>
 
         {/* Design/Social Section - Positioned higher at 867-1023px */}
-  <div className="landscape-md:order-1 landscape-md:mt-0 
-               -mt-[450px] 
-               sm:-mt-[570px] 
-               md:-mt-[600px]
-               adjust-867-1023
-               r1280x800:-mt-[450px]
-               r1024x1366:-mt-[700px] 
-               lg:-mt-[550px]">
-         <Design />
-          <Social />
-        </div>
+<div
+  className="
+    -mt-[450px] 
+    -mb-44
+
+    sm:-mt-[570px] 
+    md:-mt-[600px] 
+    lg:-mt-[550px] 
+
+    landscape:-mt-[180px]
+    landscape:sm:-mt-[600px]
+    landscape:md:-mt-[200px]
+    landscape:lg:-mt-[600px]
+  "
+>
+  <Design />
+  <Social />
+</div>
+
       </div>
 
       {/* Fixed Footer at bottom */}
