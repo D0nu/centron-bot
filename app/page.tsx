@@ -86,7 +86,7 @@ export default function Home() {
 
     landscape:-mt-[180px]
     landscape:sm:-mt-[600px]
-    landscape:md:-mt-[200px]
+    landscape:md:-mt-[500px]
     landscape:lg:-mt-[600px]
   "
 >
