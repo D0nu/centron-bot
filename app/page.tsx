@@ -4,7 +4,7 @@ import Social from "@/components/social";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden ">
+    <div className="relative overflow-hidden lg:-mt-48 ">
       {/* Wrap content sections in a landscape-responsive container */}
       <div className="flex flex-col landscape-md:flex-col-reverse">
         {/* Text & Buttons Section - Should appear SECOND in landscape */}

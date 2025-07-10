@@ -47,7 +47,7 @@ export default function Design() {
     base: [-70, -20, 20, 70],
     sm: [-70, -20, 20, 70],
     md: [-140, -60, 60, 140],
-    lg: [-280, -100, 100, 280],
+    lg: [-280, -70, 70, 280],
   }[screenSize];
 
   const getLineIndex = (id: ImageID): number => {
@@ -206,7 +206,7 @@ export default function Design() {
 
       {/* Diagonal Lines */}
       <div
-        className="absolute bottom-[80px] left-1/2 transform -translate-x-1/2 w-full pointer-events-none z-0 animate-pulse"
+        className="absolute  bottom-[80px] left-1/2 transform -translate-x-1/2 w-full pointer-events-none z-0 animate-pulse"
         style={{ height: lineContainerHeight }}
       >
         {lineAngles.map((angle, i) => {

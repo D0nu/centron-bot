@@ -11,7 +11,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className="antialiased bg-black font-sans">
         <Header />
-        <main className="min-h-screen pt-16">{children}</main>
+       <main className="h-[calc(100vh-4rem)] lg:overflow-hidden min-h-screen pt-16">
+  {children}
+</main>
+
         
       </body>
     </html>
