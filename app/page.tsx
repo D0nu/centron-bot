@@ -77,7 +77,7 @@ export default function Home() {
         {/* Design/Social Section - Positioned higher at 867-1023px */}
 <div
   className="
-    -mt-[680px] 
+    -mt-[520px] 
     -mb-44
 
     sm:-mt-[570px] 

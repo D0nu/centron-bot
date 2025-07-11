@@ -77,9 +77,9 @@ export default function Design() {
       const verticalPositions: Record<ScreenSize, Record<ImageID, number>> = {
         base: {
           walrus: isMobileLandscape ? 0.52 : 0.68,
-          equal: isMobileLandscape ? 0.1 : 0.21,
+          equal: isMobileLandscape ? 0.1 : 0.13,
           sui: isMobileLandscape ? 0.22 : 0.25,
-          globe: isMobileLandscape ? 0.01 : 0.21,
+          globe: isMobileLandscape ? 0.01 : 0.09,
         },
         sm: {
           walrus: isMobileLandscape ? 1.2 : 0.68,
@@ -115,7 +115,7 @@ export default function Design() {
           }[screenSize][id];
         } else {
           return {
-            base: { walrus: -10, equal: -35, sui: -5, globe: -44 },
+            base: { walrus: -10, equal: -35, sui: -5, globe: -38 },
             sm: { walrus: -10, equal: -35, sui: -5, globe: -38 },
             md: { walrus: -30, equal: -45, sui: -8, globe: -60 },
             lg: { walrus: -35, equal: -50, sui: -80, globe: 0 },
@@ -158,7 +158,7 @@ export default function Design() {
     else if (screenSize === "sm") lineContainerHeight = "180dvh";
     else lineContainerHeight = "220dvh";
   } else {
-    if (screenSize === "base") lineContainerHeight = "64%";
+    if (screenSize === "base") lineContainerHeight = "70%";
     else if (screenSize === "sm") lineContainerHeight = "76%";
     else if (screenSize === "md") lineContainerHeight = "170%";
     else lineContainerHeight = "100%";
