@@ -30,13 +30,13 @@ export default function Social() {
               fill="white"
             />
           </svg>
-          <h1 className="hidden desktop-940:block lg:block">Bot</h1>
+          <h1 className="hidden desktop-940:block lg:block">Telegram</h1>
         </div>
         </a>
 
         {/* Notion */}
         <a
-          href="https://pine-book-6a9.notion.site/Quick-Start-230e92ca1b6380c59749f9d18d11bbfb"
+          href="https://pine-book-6a9.notion.site/Centron-Bot-Development-Progress-Report-233e92ca1b63806f83d5ed3008bdf317?source=copy_link"
           target="_blank"
           rel="noopener noreferrer"
           className="text-primary  font-medium"

@@ -12,13 +12,16 @@ export default function Home() {
           <div className="justify-center items-center mt-44 md:mt-60 r853x1280:mt-[323px] r912x1368:mt-96 r1280x800:mt-[480px] r1024x1366:mt-[423px] lg:mt-80">
             <div className="text-center mt-24 px-4 sm:px-6">
               <h1 className="text-[#3FFF90] text-[32px] sm:text-[44px] md:text-[54.8px] leading-tight font-medium">
-                Trade seamlessly
-                <br className="block lg:hidden" />
-                on Sui with
-              </h1>
+              Trade seamlessly
+              <span className="hidden lg:inline">&nbsp;</span>
+              <br className="block lg:hidden" />
+              on Sui with
+            </h1>
+
 
               <h2 className="text-white text-[32px] sm:text-[44px] md:text-[54.8px] leading-tight font-medium mt-1">
                 low fees + high
+                 <span className="hidden lg:inline">&nbsp;</span>
                 <br className="block lg:hidden" />
                 speeds.
               </h2>
