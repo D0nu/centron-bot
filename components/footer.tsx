@@ -18,7 +18,6 @@ export default function Footer() {
             href="https://tos.centronbot.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
           >
             Terms of Service
           </a>
@@ -29,7 +28,7 @@ export default function Footer() {
             href="https://tos.centronbot.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            
           >
             Privacy Policy
           </a>
