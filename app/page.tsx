@@ -102,7 +102,7 @@ export default function Home() {
       </div>
 
       {/* Fixed Footer */}
-      <div className="fixed bottom-0 left-0 w-full">
+      <div className="fixed bottom-0 left-0 w-full z-50">
         <Footer />
       </div>
     </div>
